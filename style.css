@@ -156,8 +156,21 @@ section h2 {
     background-color: white;
 }
 
+/* Animación para la flecha de scroll */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-8px);
+    }
+}
+
 .contenedor {
-    display: flex;
+    display: flex;;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -166,18 +179,13 @@ section h2 {
     margin-top: 30px;
 }
 
-.image-container, .about_container {
-    flex: 1 1 45%;
-    text-align: center;
-}
-
 .image-container {
-  width: 1vw; /* o el tamaño deseado */
-  height: 400px;
+  width: 300px; /* o el tamaño deseado */
+  height: 300px;
   overflow: hidden;
   border-radius: 50%;
-  margin-left: 10px; margin-right: 10px;
   background-color: #fff;
+  margin-left: 150px;
 
 }
 
@@ -188,9 +196,9 @@ section h2 {
 }
 
 .about_container {
-    width: 80%;
+    width: 50%;
     margin-top: 20px;
-    margin: 0 auto;
+    margin-right: 20px;
 }
 
 #whatido {
@@ -260,15 +268,3 @@ section h2 {
     }
 }
 
-/* Animación para la flecha de scroll */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-15px);
-    }
-    60% {
-        transform: translateY(-8px);
-    }
-}
