@@ -30,6 +30,12 @@ header {
     transition: background-color 0.3s ease;
 }
 
+#home {
+   color: #FFFFFF;
+}
+#work {
+    color: #FFFFFF;
+}
 .main-nav {
     display: flex;
     justify-content: space-between;
@@ -199,6 +205,8 @@ section h2 {
     width: 50%;
     margin-top: 20px;
     margin-right: 20px;
+    color: #FFFFFF;
+    
 }
 
 #whatido {
@@ -213,6 +221,8 @@ section h2 {
     align-items: flex-start;
     gap: 30px;
     margin-top: 30px;
+    margin-left: 40px;
+    color: #FFFFFF;
 }
 
 .que_hago_IZ, .que_hago_DE {
@@ -223,6 +233,7 @@ section h2 {
 .que_hago_DE ul {
     list-style: none;
     padding: 0;
+    color: #FFFFFF;
 }
 
 .que_hago_DE ul li {
@@ -268,3 +279,72 @@ section h2 {
     }
 }
 
+.experience-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.carousel-container {
+    flex: 1;
+    max-width: 500px;
+}
+
+.experience-text {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+}
+
+.experience-text h3 {
+    font-size: 2rem;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+.experience-text h4 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.experience-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+.experience-text .date {
+    font-size: 1rem;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Personalización del carrusel */
+.carousel-item img {
+    border-radius: 15px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.carousel-indicators button {
+    background-color:#b4b4b4
+}
