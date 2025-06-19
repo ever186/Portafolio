@@ -6,6 +6,7 @@
     <title>Mi Portafolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
 </head>
 <body>
 
@@ -20,8 +21,8 @@
     </header>
 
     <section id="home" class="hero-section">
-        <h1>MY PORTFOLIO</h1>
-        <p>Here is where your presentation begins!</p>
+        <h1>MY PORTAFOLIO</h1>
+        <p>Tecnología con propósito: aquí encontrarás lo que construyo para mejorar procesos, proteger sistemas y potenciar decisiones.</p>
         <a href="#about" class="scroll-down-arrow">
             <i class="fa-solid fa-chevron-down"></i>
         </a>
@@ -43,7 +44,7 @@
         
         <div class="whatido-container">
             <div class="que_hago_IZ">
-                <h2>WHAT I DO</h2>
+                <h2 color="#FFFFFF">WHAT I DO</h2>
                 <p>
                     Soy Ingeniero Electrónico con experiencia en instrumentación industrial, automatización y sistemas de control avanzados. Me especializo en el diseño, implementación y optimización de procesos industriales, integrando tecnología para mejorar la eficiencia, confiabilidad y seguridad operativa. Además, me apasiona la ciberseguridad y el análisis de datos, áreas en las que aplico herramientas como Wireshark, Nmap, Scapy y Python para el monitoreo de redes, detección de vulnerabilidades y análisis forense. También utilizo SQL, Excel avanzado y Power BI para transformar datos en información valiosa para la toma de decisiones.
                 </p>
@@ -91,8 +92,75 @@
 
     <section id="experience">
         <h2>MY EXPERIENCE</h2>
-        <p>Detalla tu experiencia laboral, estudios relevantes o proyectos importantes. Detalla tu experiencia laboral, estudios relevantes o proyectos importantes. Detalla tu experiencia laboral, estudios relevantes o proyectos importantes.</p>
+        <div class="experience-container">
+            <!-- Carrusel de imágenes -->
+            <div class="carousel-container">
+                <div id="experienceCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#experienceCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#experienceCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#experienceCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#experienceCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-experience="0">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop" class="d-block w-100" alt="Experiencia 1">
+                        </div>
+                        <div class="carousel-item" data-experience="1">
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop" class="d-block w-100" alt="Experiencia 2">
+                        </div>
+                        <div class="carousel-item" data-experience="2">
+                            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&h=400&fit=crop" class="d-block w-100" alt="Experiencia 3">
+                        </div>
+                        <div class="carousel-item" data-experience="3">
+                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop" class="d-block w-100" alt="Experiencia 4">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#experienceCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#experienceCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Texto dinámico -->
+            <div class="experience-text">
+                
+                <div id="experience-content">
+                    <h3 id="experience-title">Ingeniero de Instrumentación</h3>
+                    <h4 id="experience-company">Empresa Industrial S.A.</h4>
+                    <div class="date" id="experience-date">2023 - Presente</div>
+                    <p id="experience-description">
+                        Lidero proyectos de instrumentación y control avanzado en sistemas industriales críticos. He implementado soluciones de automatización que han mejorado la eficiencia operativa en un 25% y reducido los tiempos de mantenimiento preventivo. Mi experiencia incluye la integración de sistemas SCADA, programación de PLCs y desarrollo de interfaces HMI para el monitoreo en tiempo real de procesos industriales.
+                    </p>
+                    <p id="experience-achievements">
+                        <strong>Logros principales:</strong><br>
+                        • Implementación de sistema de monitoreo predictivo<br>
+                        • Reducción de costos operativos en 15%<br>
+                        • Certificación en ciberseguridad industrial<br>
+                        • Liderazgo de equipo multidisciplinario de 8 personas
+                    </p>
+                </div>
+
+                <div id="experience-editor" style="display: none;">
+                    <textarea id="edit-title" class="edit-textarea" placeholder="Título del puesto..."></textarea>
+                    <textarea id="edit-company" class="edit-textarea" placeholder="Nombre de la empresa..."></textarea>
+                    <textarea id="edit-date" class="edit-textarea" placeholder="Período (ej: 2023 - Presente)..."></textarea>
+                    <textarea id="edit-description" class="edit-textarea" placeholder="Descripción de la experiencia..."></textarea>
+                    <textarea id="edit-achievements" class="edit-textarea" placeholder="Logros principales..."></textarea>
+                    <button class="save-btn" onclick="saveChanges()">
+                        <i class="fas fa-save"></i> Guardar Cambios
+                    </button>
+                </div>
+            </div>
+        </div>
     </section>
+
+
     <section id="work">
         <h2>MY WORK</h2>
         <p>¡Muestra tus proyectos! Aquí puedes poner una galería de imágenes, videos o enlaces.</p>
@@ -110,6 +178,9 @@
         <a href="#experience" class="dot"></a>
         <a href="#work" class="dot"></a>
     </aside>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
     <script src="script.js"></script>
 </body>
