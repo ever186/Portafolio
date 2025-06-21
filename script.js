@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Animación de entrada
             contentDiv.style.opacity = '1';
-        }, 300); // Coincide con la duración de la transición en CSS
+        }, 600); // Coincide con la duración de la transición en CSS
     }
 
     const experienceCarousel = document.getElementById('experienceCarousel');
