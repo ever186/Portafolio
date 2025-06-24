@@ -5,21 +5,78 @@ html {
     scroll-behavior: smooth; 
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #121212;
-    color: #e0e0e0;
+/* La "ventana" para la animación */
+h1 span {
+    position: relative;
+    margin-right: 450px; /* Espacio entre palabras s*/
+    display: inline-block;
+    color: #ff988a;
+    font-size: 4.5rem;
+    vertical-align: bottom; /* Alinea la caja con la parte inferior de "SOY" */
+    height: 5.4rem; /* Un poco más que el font-size para evitar recortes */
 }
 
+/* Cada palabra animada individualmente */
+h1 > span > span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    opacity: 0; /* Comienzan ocultas */
+    animation: slide-down-word 10s linear infinite; /* Usamos linear para un tiempo consistente */
+}
+
+/* Nuevos keyframes para la animación de deslizamiento hacia abajo */
+@keyframes slide-down-word {
+    0% {
+        transform: translateY(-50%); /* Posición inicial: arriba, fuera de vista */
+        opacity: 0;
+    }
+    10% {
+        transform: translateY(0); /* Se desliza hacia su posición */
+        opacity: 1;
+    }
+    25% {
+        transform: translateY(0); /* Permanece visible */
+        opacity: 1;
+    }
+    35% {
+        transform: translateY(50%); /* Se desliza hacia abajo, fuera de vista */
+        opacity: 0;
+    }
+    100% {
+        opacity: 0; /* Permanece oculta por el resto del ciclo */
+    }
+}
+
+/* Retardos en la animación para secuenciar las palabras */
+h1 > span > span:nth-child(1) {
+    animation-delay: 0s;
+}
+h1 > span > span:nth-child(2) {
+    animation-delay: 2.5s; /* 10s de duración / 4 palabras = 2.5s por palabra */
+}
+h1 > span > span:nth-child(3) {
+    animation-delay: 5s;
+}
+h1 > span > span:nth-child(4) {
+    animation-delay: 7.5s;
+}
+
+.text_firt {
+    font-size: 1.3rem;
+    margin-top: 15px;
+    max-width: 600px;
+    font-style: italic;
+    font-weight: 600;
+}
 /* --- Navegación Principal Superior --- */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 50px;
+    padding: 15px 50px;
     box-sizing: border-box;
     z-index: 1000;
     background-color: rgba(18, 18, 18, 0.7);
@@ -29,7 +86,7 @@ header {
 }
 
 #home {
-   color: #FFFFFF;
+color: #FFFFFF;
 }
 #whatido {
     color: #FFFFFF;
@@ -62,6 +119,8 @@ header {
     font-size: 2rem;
     color: #C70039;
 }
+
+
 
 /* --- Estilo para TODAS las secciones --- */
 section {
@@ -390,4 +449,95 @@ section h2 {
     section h2 { font-size: 2.5rem; }
     .main-nav { flex-direction: column; gap: 10px; }
     .dots-nav, .social-links { display: none; }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .main-nav {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+/* --- INICIA CÓDIGO RESPONSIVO --- */
+
+/* Para tablets y dispositivos medianos (hasta 992px) */
+@media (max-width: 992px) {
+    .contenedor, 
+    .whatido-container, 
+    .experience-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .image-container { margin: 0 auto; }
+    .about_container, .experience-text, .que_hago_IZ, .que_hago_DE {
+        text-align: center;
+    }
+}
+
+/* Para tablets pequeñas y la mayoría de móviles (hasta 768px) */
+@media (max-width: 768px) {
+    /* --- Ajustes Generales --- */
+    section { padding: 60px 25px; }
+    section h2 { font-size: 2.5rem; }
+
+    /* --- Ocultar navegación lateral --- */
+    .dots-nav, .social-links { display: none; }
+
+    /* --- Sección Hero --- */
+    .hero-section h1 { font-size: 3rem; }
+    .hero-section p { font-size: 1rem; }
+    h1 span {
+        font-size: 3rem;
+        height: 3.3rem;
+    }
+
+    /* --- MENÚ HAMBURGUESA --- */
+    .nav-toggle { display: block; }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Empieza oculto fuera de la pantalla */
+        width: 70%;
+        height: 100vh;
+        background-color: #1a1a1a;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: right 0.4s ease-in-out;
+    }
+
+    .nav-links.is-active {
+        right: 0; /* Se desliza a la vista */
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+}
+
+/* Para móviles con pantallas más pequeñas (hasta 480px) */
+@media (max-width: 480px) {
+    section { padding: 50px 20px; }
+    section h2 { font-size: 2.1rem; }
+
+    .hero-section h1 {
+        font-size: 2.3rem;
+        line-height: 1.4;
+    }
+    h1 span {
+        font-size: 2.3rem;
+        height: 2.6rem;
+    }
+    .product-listing { grid-template-columns: 1fr; }
 }
