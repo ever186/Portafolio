@@ -61,7 +61,7 @@ h1 span {
     position: relative;
     margin-right: 450px; /* Espacio entre palabras s*/
     display: inline-block;
-    color: #ff988a;
+    color: #FF5733;
     font-size: 4.5rem;
     vertical-align: bottom; /* Alinea la caja con la parte inferior de "SOY" */
     height: 5.4rem; /* Un poco más que el font-size para evitar recortes */
