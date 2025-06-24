@@ -5,6 +5,57 @@ html {
     scroll-behavior: smooth; 
 }
 
+
+/* --- Navegación Principal Superior --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 50px;
+    box-sizing: border-box;
+    z-index: 1000;
+    background-color: rgba(18, 18, 18, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease;
+}
+
+#home {
+color: #FFFFFF;
+}
+#whatido {
+    color: #FFFFFF;
+}
+#work {
+    color: #FFFFFF;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding: 10px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.main-nav a:hover {
+    color:#C70039;
+    transform: translateY(-2px);
+}
+
+.main-nav .logo {
+    font-size: 2rem;
+    color: #C70039;
+}
+
 /* La "ventana" para la animación */
 h1 span {
     position: relative;
@@ -70,57 +121,6 @@ h1 > span > span:nth-child(4) {
     font-style: italic;
     font-weight: 600;
 }
-/* --- Navegación Principal Superior --- */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 15px 50px;
-    box-sizing: border-box;
-    z-index: 1000;
-    background-color: rgba(18, 18, 18, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: background-color 0.3s ease;
-}
-
-#home {
-color: #FFFFFF;
-}
-#whatido {
-    color: #FFFFFF;
-}
-#work {
-    color: #FFFFFF;
-}
-
-.main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.main-nav a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    padding: 10px;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.main-nav a:hover {
-    color:#C70039;
-    transform: translateY(-2px);
-}
-
-.main-nav .logo {
-    font-size: 2rem;
-    color: #C70039;
-}
-
-
 
 /* --- Estilo para TODAS las secciones --- */
 section {
